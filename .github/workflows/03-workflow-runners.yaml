@@ -13,6 +13,6 @@ jobs:
   windows-echo:
     runs-on: windows-latest
     steps:
-       - name: Show Windows
+      - name: Show Windows
         run: |
           echo "This is running on a(n) $RUNNER_OS"
