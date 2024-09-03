@@ -1,0 +1,26 @@
+name: "My Workflow"
+on: push
+
+jobs:
+  my-first-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "my-first-job"
+        run: echo "my-first-job"
+
+  my-second-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "my-second-job"
+        run: echo "my-seco nd-job"
+
+  echo-goodbye:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "echo-goodbye"
+        run: |
+          echo "Goodbye!"
+          exit 1
+
+      - name: "echo-ttl"
+        run: echo "ttl is over!"
