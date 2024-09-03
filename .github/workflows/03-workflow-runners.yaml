@@ -12,7 +12,9 @@ jobs:
 
   windows-echo:
     runs-on: windows-latest
+
     steps:
       - name: Show Windows
+        shell: bash
         run: |
           echo "This is running on a(n) $RUNNER_OS"
