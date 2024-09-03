@@ -19,7 +19,7 @@ jobs:
     steps:
       - name: "echo-goodbye"
         run: |
-          echo "Goodbye!"
+          echo "Goodbye!!"
           exit 0
 
       - name: "echo-ttl"
