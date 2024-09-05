@@ -16,7 +16,7 @@ jobs:
       - name: Slack Notification on Success
         uses: rtCamp/action-slack-notify@v2
         env:
-          SLACK_TOKEN: ${{ secrets.SLACT_TOKEN }}
+          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
           SLACK_CHANNEL: #engineering-errors
           SLACK_COLOR: ${{ job.status }}
           SLACK_ICON: https://github.com/rtCamp.png?size=48
