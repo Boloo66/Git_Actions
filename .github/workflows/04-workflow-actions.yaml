@@ -16,3 +16,24 @@ jobs:
 
       - name: Print folders
         run: ls
+
+      - name: setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20.x"
+
+      - name: install dependencies
+        run: npm ci
+        working-directory: react-app
+
+      - name: run unit tests
+        run: npm run test
+
+      - name: build library
+        run: npm run build
+
+      - name: upload library
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
