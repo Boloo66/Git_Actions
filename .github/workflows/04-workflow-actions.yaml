@@ -24,7 +24,7 @@ jobs:
 
       - name: install dependencies
         run: npm ci
-        working-directory: react-app
+        working-directory: react-app/
 
       - name: run unit tests
         run: npm run test
