@@ -17,7 +17,7 @@ jobs:
         uses: rtCamp/action-slack-notify@v2
         env:
           SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
-          SLACK_CHANNEL: ${{ secrets.ENGINEERING_TASKS_CHANNEL_ID}}
+          SLACK_CHANNEL: ${{ secrets.SLACK_ERRORS_CHANNEL_ID}}
           SLACK_COLOR: ${{ job.status }}
           SLACK_ICON: https://github.com/rtCamp.png?size=48
           SLACK_MESSAGE: "Please take action. <@U03JJDADK3Q> <@U035P1FDQM7>"
