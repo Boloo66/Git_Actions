@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Print folders
-        run: ls
+        run: ls -al
 
       - name: setup Node.js
         uses: actions/setup-node@v3
@@ -31,12 +31,15 @@ jobs:
 
       - name: run unit tests
         run: npm run test
+        working-directory: react-app/
 
       - name: build library
         run: npm run build
+        working-directory: react-app/
 
       - name: upload library
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         run: npm publish
+        working-directory: react-app/
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
