@@ -1,0 +1,25 @@
+#Send Slack Notification to Engineering Channel
+
+name: Push or Merge Notification
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  slackNotification:
+    name: Slack Notification
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Slack Notification on Success
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_TOKEN: ${{ secrets.SLACT_TOKEN }}
+          SLACK_CHANNEL: #engineering-errors
+          SLACK_COLOR: ${{ job.status }}
+          SLACK_ICON: https://github.com/rtCamp.png?size=48
+          SLACK_MESSAGE: "Please take action. <@U03JJDADK3Q> <@U035P1FDQM7>"
+          SLACK_TITLE: SendMercury Notification for Deployment
+          SLACK_USERNAME: Zedi Engineering Bot
